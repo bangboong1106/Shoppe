@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Shopee.vn</title>
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.14.0-web/css/all.min.css">
 </head>
 <body>
     <div class="app">
         <header class="header">
-            <div class="grid">
-                <nav class="header__navbar">
+            <div class="grid wide">
+                <nav class="header__navbar hide-on-tablet-mobile">
                     <ul class="header__navbar-list">
                         <li class="header__navbar-item header__navbar-item--separate">Kênh Người Bán </li>
                         <li class="header__navbar-item header__navbar-item--hasqr header__navbar-item--separate">Tải ứng dụng 
@@ -132,8 +134,14 @@
                         </li>
                     </ul>
                 </nav>
+                
                 <div class="header-with-search">
-                    <div class="header__logo">
+                    <label for="mobile-search-checkbox" class="header__mobile-search ">
+                        <i class=" fas fa-search header__mobile-search-icon"></i>
+                       
+                    </label>
+                    <input type="checkbox" hidden     id="mobile-search-checkbox" class="header__search-checkbox">
+                    <div class="header__logo hide-on-tablet">
                        <a href="/" class="header__logo-link">
                         <svg viewBox="0 0 192 65" class="header__logo-img">
                             <g fill-rule="evenodd">
@@ -141,8 +149,9 @@
                             </g>
                          </svg>
                         </a>
-                    </div>
-                    <div class="header__search">
+                    </div>  
+                    
+                    <div class="header__search ">
                         <div class="header__search-input--wrap">
                             <input type="text" class="header__search-input" placeholder="Nhập sản phẩm cần tìm kiếm">
                             <div class="header__search-history">
@@ -187,7 +196,24 @@
                                 <img src="./assets/img/no_cart.png" alt="" class="header__cart-list--no-cart-img">
                                 <span class="header__cart-list--no-cart-msg">Chưa có sản phẩm</span>
                                 <h5 class="header__cart-heading">Sản phẩm đã thêm</h5>
-                                <ul class="header__cart-list--item">
+                                <ul class="header__cart-list-item">
+                                    <li class="header__cart-item">
+                                        <img src="https://cf.shopee.vn/file/d5c672b3e5eea234ac8e0ec42bf1e83d_tn" alt="" class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Bộ ô dù cao cấp Bộ ô dù cao cấp Bộ ô dù cao cấpBộ ô dù cao cấp Bộ ô dù cao cấp Bộ ô dù cao cấp </h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">2.000.000đ</span>
+                                                    <span class="header__cart-item-mul">x</span>
+                                                    <span class="header__cart-item-qnt">2</span>
+                                                </div>
+                                            </div>
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-discreption">Phân loại:đen</span>
+                                                <span class="header__cart-item-remove">Xoá</span>
+                                            </div>
+                                        </div>
+                                    </li>
                                     <li class="header__cart-item">
                                         <img src="https://cf.shopee.vn/file/d5c672b3e5eea234ac8e0ec42bf1e83d_tn" alt="" class="header__cart-img">
                                         <div class="header__cart-item-info">
@@ -246,12 +272,27 @@
                     </header>
                 </div>
             </div>
+            <ul class="header-sort--bar">
+                <li class="header-sort-item">
+                    <a href="" class="header-sort-item__link">Phổ biến</a>
+                </li>
+                <li class="header-sort-item header-sort-item--active">
+                    <a href="" class="header-sort-item__link">Mới nhất</a>
+                </li>
+                <li class="header-sort-item">
+                    <a href="" class="header-sort-item__link">Bán chạy</a>
+                </li>
+                <li class="header-sort-item">
+                    <a href="" class="header-sort-item__link">Giá</a>
+                </li>
+            </ul>
+            
         </header>
 
         <div class="app__container">
-            <div class="grid">
-                <div class="grid__row app__content">
-                    <div class="grid__column-2">
+            <div class="grid wide">
+                <div class="row sm-gutter app__content">
+                    <div class="col sm-gutter l-2 m-0 c-0 hide-on-tablet-mobile">
                         <nav class="category">
                             <h3 class="category__headding">
                                 <i class="category__headding-icon fas fa-list"></i>
@@ -276,8 +317,8 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="grid__column-10">
-                        <div class="home-filter">
+                    <div class="col l-10 m-12 c-12">
+                        <div class="home-filter hide-on-tablet-mobile">
                             <span class="home-filter__lable">Sắp xếp theo</span>
                             <button class="home-filter__btn btn">Phổ biến</button>
                             <button class="home-filter__btn btn btn-primary">Mới nhất</button>
@@ -296,7 +337,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="home-filter__page">
+                            <div class="home-filter__page ">
                                 <span class="home-filter__page-num">
                                     <span class="home-filter__page-num--current">1</span>/14
                                 </span>
@@ -310,8 +351,33 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="grid__row">
-                            <div class="grid__column-2-4">
+                        <nav class="mobile-category">
+                            <ul class="mobile-category--list">
+                                <li class="mobile-category--item">
+                                    <a href="" class="mobile-category--link">Giày nam đep</a>
+                                </li>
+                                <li class="mobile-category--item">
+                                    <a href="" class="mobile-category--link">Giày nữ giá rẻ</a>
+                                </li>
+                                <li class="mobile-category--item">
+                                    <a href="" class="mobile-category--link">Quần áo hot deal</a>
+                                </li>
+                                <li class="mobile-category--item">
+                                    <a href="" class="mobile-category--link">Dụng cụ học tập</a>
+                                </li>
+                                <li class="mobile-category--item">
+                                    <a href="" class="mobile-category--link">Đồ trang sức</a>
+                                </li>
+                                <li class="mobile-category--item">
+                                    <a href="" class="mobile-category--link">Đồng hồ đeo tay</a>
+                                </li>
+                                <li class="mobile-category--item">
+                                    <a href="" class="mobile-category--link">Dụng cụ nhà bếp</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="row sm-gutter">
+                            <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product">
                                     <a class="home-product-item" href="">
                                         <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/cd38e82bef1c1eaa15df43d0d9985372_tn);"></div>
@@ -348,14 +414,15 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="grid__column-2-4">
+                            <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product">
                                     <a class="home-product-item" href="">
-                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/cd38e82bef1c1eaa15df43d0d9985372_tn);"></div>
-                                        <h4 class="home-product-item__name">Bộ túi hút chân không Kitai đựng quần áo, chăn màn, mền gối của Nhật Bản cho gia đình, du lịch</h4>
+                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/5dbd6bbe5fd125f045e905fed55dc2d8_tn);"></div>
+                                        <h4 class="home-product-item__name">Loa Bluetooth Karaoke Kimiso KM-S1/S2 (Đen) Kèm 1 Mic Có Dây, Có 2 Loa Super Bass, Đèn Led Sống Động bnix
+                                        </h4>
                                         <div class="home-produc-item__price">
-                                            <span class="home-produc-item__price-old">100.000đ</span>
-                                            <span class="home-produc-item__price-current">79.000đ</span>
+                                            <span class="home-produc-item__price-old">280.000đ</span>
+                                            <span class="home-produc-item__price-current">199.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__like-liked">
@@ -385,14 +452,14 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="grid__column-2-4">
+                            <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product">
                                     <a class="home-product-item" href="">
-                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/cd38e82bef1c1eaa15df43d0d9985372_tn);"></div>
-                                        <h4 class="home-product-item__name">Bộ túi hút chân không Kitai đựng quần áo, chăn màn, mền gối của Nhật Bản cho gia đình, du lịch</h4>
+                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/67d57b71ec06619a1b11a2b057632688_tn);"></div>
+                                        <h4 class="home-product-item__name">Máy Cạo Râu Cao Cấp Thương Hiệu Philips AT610</h4>
                                         <div class="home-produc-item__price">
-                                            <span class="home-produc-item__price-old">100.000đ</span>
-                                            <span class="home-produc-item__price-current">79.000đ</span>
+                                            <span class="home-produc-item__price-old">999.000</span>
+                                            <span class="home-produc-item__price-current">750.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__like-liked">
@@ -422,14 +489,14 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="grid__column-2-4">
+                            <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product">
                                     <a class="home-product-item" href="">
-                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/cd38e82bef1c1eaa15df43d0d9985372_tn);"></div>
-                                        <h4 class="home-product-item__name">Bộ túi hút chân không Kitai đựng quần áo, chăn màn, mền gối của Nhật Bản cho gia đình, du lịch</h4>
+                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/ea70383157032bfcd1f5cacd64cf2fd9_tn);"></div>
+                                        <h4 class="home-product-item__name">Đồng hồ đeo tay thông minh Xiaomi Haylou chống nước IP68 hỗ trợ theo dõi nhịp tim/ giấc ngủ kết nối bluetooth LS05</h4>
                                         <div class="home-produc-item__price">
-                                            <span class="home-produc-item__price-old">100.000đ</span>
-                                            <span class="home-produc-item__price-current">79.000đ</span>
+                                            <span class="home-produc-item__price-old">890.000đ</span>
+                                            <span class="home-produc-item__price-current">699.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__like-liked">
@@ -459,14 +526,14 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="grid__column-2-4">
+                            <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product">
                                     <a class="home-product-item" href="">
-                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/cd38e82bef1c1eaa15df43d0d9985372_tn);"></div>
-                                        <h4 class="home-product-item__name">Bộ túi hút chân không Kitai đựng quần áo, chăn màn, mền gối của Nhật Bản cho gia đình, du lịch</h4>
+                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/9df0c800756ec8826b05f3b4e1b29618_tn);"></div>
+                                        <h4 class="home-product-item__name">[Mã COSJJ24 giảm 20K đơn 199K] Nước súc miệng Listerine trắng sáng 750ml + Tặng 1 trà xanh 250ml - 101016576</h4>
                                         <div class="home-produc-item__price">
-                                            <span class="home-produc-item__price-old">100.000đ</span>
-                                            <span class="home-produc-item__price-current">79.000đ</span>
+                                            <span class="home-produc-item__price-old">146.000đ</span>
+                                            <span class="home-produc-item__price-current">106.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__like-liked">
@@ -496,14 +563,14 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="grid__column-2-4">
+                            <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product">
                                     <a class="home-product-item" href="">
-                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/cd38e82bef1c1eaa15df43d0d9985372_tn);"></div>
-                                        <h4 class="home-product-item__name">Bộ túi hút chân không Kitai đựng quần áo, chăn màn, mền gối của Nhật Bản cho gia đình, du lịch</h4>
+                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/f663e8997e90b33b41d1c8306d0d704d_tn);"></div>
+                                        <h4 class="home-product-item__name">Bình Giữ Nhiệt Thủy Tinh Bọc Nhựa Lúa Mạch 450ml Họa Tiết Xương Rồng, Chống Va Đập, Có Dây Xách Tiện Dụng</h4>
                                         <div class="home-produc-item__price">
-                                            <span class="home-produc-item__price-old">100.000đ</span>
-                                            <span class="home-produc-item__price-current">79.000đ</span>
+                                            <span class="home-produc-item__price-old">13.000đ</span>
+                                            <span class="home-produc-item__price-current">9.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__like-liked">
@@ -533,14 +600,14 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="grid__column-2-4">
+                            <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product">
                                     <a class="home-product-item" href="">
-                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/cd38e82bef1c1eaa15df43d0d9985372_tn);"></div>
-                                        <h4 class="home-product-item__name">Bộ túi hút chân không Kitai đựng quần áo, chăn màn, mền gối của Nhật Bản cho gia đình, du lịch</h4>
+                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/76cdf385b4a78bf61242e0827cdb910e_tn);"></div>
+                                        <h4 class="home-product-item__name">Máy cắt tỉa lông mũi Philips NT1152/10 Nhật</h4>
                                         <div class="home-produc-item__price">
-                                            <span class="home-produc-item__price-old">100.000đ</span>
-                                            <span class="home-produc-item__price-current">79.000đ</span>
+                                            <span class="home-produc-item__price-old">419.000đ</span>
+                                            <span class="home-produc-item__price-current">399.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__like-liked">
@@ -570,14 +637,14 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="grid__column-2-4">
+                            <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product">
                                     <a class="home-product-item" href="">
-                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/cd38e82bef1c1eaa15df43d0d9985372_tn);"></div>
-                                        <h4 class="home-product-item__name">Bộ túi hút chân không Kitai đựng quần áo, chăn màn, mền gối của Nhật Bản cho gia đình, du lịch</h4>
+                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/ba7bd189de655453a6bda735c97ed41e_tn);"></div>
+                                        <h4 class="home-product-item__name">NƯỚC HOA KHÔ SHI [FREE SHIP] NƯỚC HOA KHÔ SHI MANG DẠNG SÁP ĐANG CỰC KỲ HOT</h4>
                                         <div class="home-produc-item__price">
-                                            <span class="home-produc-item__price-old">100.000đ</span>
-                                            <span class="home-produc-item__price-current">79.000đ</span>
+                                            <span class="home-produc-item__price-old">10.000đ</span>
+                                            <span class="home-produc-item__price-current">7.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__like-liked">
@@ -607,14 +674,14 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="grid__column-2-4">
+                            <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product">
                                     <a class="home-product-item" href="">
-                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/cd38e82bef1c1eaa15df43d0d9985372_tn);"></div>
-                                        <h4 class="home-product-item__name">Bộ túi hút chân không Kitai đựng quần áo, chăn màn, mền gối của Nhật Bản cho gia đình, du lịch</h4>
+                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/3147e5a8f8534fc5049b624e3d46b2dd_tn);"></div>
+                                        <h4 class="home-product-item__name">Kệ đựng bút 4 màu hình nhựa lúa mạch ống nhựa đựng bút 4 ngăn chéo</h4>
                                         <div class="home-produc-item__price">
-                                            <span class="home-produc-item__price-old">100.000đ</span>
-                                            <span class="home-produc-item__price-current">79.000đ</span>
+                                            <span class="home-produc-item__price-old">40.000đ</span>
+                                            <span class="home-produc-item__price-current">29.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__like-liked">
@@ -644,14 +711,14 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="grid__column-2-4">
+                            <div class="col l-2-4 m-4 c-6">
                                 <div class="home-product">
                                     <a class="home-product-item" href="">
-                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/cd38e82bef1c1eaa15df43d0d9985372_tn);"></div>
-                                        <h4 class="home-product-item__name">Bộ túi hút chân không Kitai đựng quần áo, chăn màn, mền gối của Nhật Bản cho gia đình, du lịch</h4>
+                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/3acbdedf5439cf1b561c1efd4900101e_tn);"></div>
+                                        <h4 class="home-product-item__name"> Hàng Mới Về 🌞 Đồng Hồ Thông Minh Thể Thao M4 Chống Nước Kết Nối Bluetooth</h4>
                                         <div class="home-produc-item__price">
-                                            <span class="home-produc-item__price-old">100.000đ</span>
-                                            <span class="home-produc-item__price-current">79.000đ</span>
+                                            <span class="home-produc-item__price-old">200.000đ</span>
+                                            <span class="home-produc-item__price-current">149.000đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <span class="home-product-item__like home-product-item__like-liked">
@@ -682,13 +749,120 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Page number -->
+                        <ul class="pagination home-product__pagination">
+                            <li class="pagination__item">
+                                <a href="" class="pagination__link">
+                                    <i class="pagination__link-icon fas fa-angle-left"></i>
+                                </a>
+                            </li>
+                            <li class="pagination__item pagination__item-active">
+                                <a href="" class="pagination__link">1</a>
+                            </li>
+                            <li class="pagination__item">
+                                <a href="" class="pagination__link">2</a>
+                            </li>
+                            <li class="pagination__item">
+                                <a href="" class="pagination__link">3</a>
+                            </li>
+                            <li class="pagination__item">
+                                <a href="" class="pagination__link">4</a>
+                            </li>
+                            <li class="pagination__item">
+                                <a href="" class="pagination__link">5</a>
+                            </li>
+                            <li class="pagination__item">
+                                <a href="" class="pagination__link">...</a>
+                            </li>
+                            <li class="pagination__item">
+                                <a href="" class="pagination__link">14</a>
+                            </li>
+                            <li class="pagination__item">
+                                <a href="" class="pagination__link">
+                                    <i class="pagination__link-icon fas fa-angle-right"></i>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-
-        <footer class="footer">
-
+        <!-- Footer -->
+        <footer class="footer footer__content">
+            <div class="grid wide">
+                <div class="row  footer-category">
+                    <div class="col l-2-4 m-4 c-6">
+                        <h3 class="footer__heading">Chăm sóc khách hàng</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Trung tâm trợ giúp</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Mall</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Hướng dẫn mua hàng</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col l-2-4 m-4 c-6">
+                        <h3 class="footer__heading">Giới thiệu</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Giới Thiệu Về Shopee Việt Nam</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Tuyển dụng</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Điều khoản</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col l-2-4 m-4 c-6">
+                        <h3 class="footer__heading">Thanh Toán</h3>
+                    </div>
+                    <div class="col l-2-4 m-4 c-6">
+                        <h3 class="footer__heading">Theo dõi</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">
+                                    <i class="fab fa-facebook"></i>
+                                    <span> Facbook </span></a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">
+                                    <i class="fab fa-instagram"></i>
+                                   <span>Instagram </span> </a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">
+                                    <i class="fab fa-linkedin"></i>
+                                   <span> LinkedIn </span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col l-2-4 m-8 c-12">
+                        <h3 class="footer__heading">Vào cửa hàng trên ứng sụng</h3>
+                        <div class="footer-dowload">
+                            <img src="/assets/img/qr_code.png" alt="" class="footer-dowload__qr">
+                            <div class="footer-dowload__app">
+                                <a href="" class="footer-dowload__app-link">
+                                    <img src="/assets/img/googleplay.png" alt="" class="footer-dowload__app-img">
+                                </a>
+                                <a href="" class="footer-dowload__app-link">
+                                    <img src="/assets/img/appstore.png" alt="" class="footer-dowload__app-img">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="footer-copyright"> 
+                <div class="footer-copyright__content">
+                © 2020 Shopee. Tất cả các quyền được bảo lưu.
+                </div>
+               
         </footer>
 
         <!-- Modal Layout -->
